@@ -41,42 +41,42 @@ function displayGifs(){
     var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=9sbMWFRFOmEk0mCgcWFRTCeswi10K9f6&q=" + action + "&limit=10";
     console.log(queryURL);
     
-    // $.ajax({
-    //     url: queryURL,
-    //     method: 'GET'
-    // })
+    $.ajax({
+        url: queryURL,
+        method: 'GET'
+    })
     
-    // .done(function(response) {
-    //     console.log(response);
-    //     $("#gifs").empty();
-    //     var results = response.data;
+    .then(function(response) {
+        console.log(response);
+        $("#gifs").empty();
+        var results = response.data;
         
-    //             for (var i = 0; i < results.length; i++){
-    //                var newDiv = $("<div>");
-    //                newDiv.addClass("animalGifs")
+                for (var i = 0; i < results.length; i++){
+                   var newDiv = $("<div>");
+                   newDiv.addClass("animalGifs")
 
-    //                var rating = $("<p>").text("Rating: " + results[i].rating);
-    //                newDiv.append(rating);
+                   var rating = $("<p>").text("Rating: " + results[i].rating);
+                   newDiv.append(rating);
+                    console.log(rating);
+                   var gifImage = $("<img>");
 
-    //                var gifImage = $("<img>");
+                   gifImage.attr("src");
+                   gifImage.attr("data-still");
+                   gifImage.attr("data-animate");
+                   gifImage.attr("data-state", "still");
 
-    //                gifImage.attr("src");
-    //                gifImage.attr("data-still");
-    //                gifImage.attr("data-animate");
-    //                gifImage.attr("data-state", "still");
+                   gifImage.addClass("image");
 
-    //                gifImage.addClass("image");
+                   newDiv.append(gifImage);
 
-    //                newDiv.append(gifImage);
-
-    //                $("#gifs").prepend(newDiv);
+                   $("#gifs").prepend(newDiv);
 
 
-    //             }
+                }
         
-        };
+        });
     
-    // };
+    };
 
 $(document).on("click", ".animal", displayGifs);
 $(document).on("click", ".image", function(){
@@ -91,28 +91,4 @@ $(document).on("click", ".image", function(){
         $(this).attr("data-state", "still");
     }
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 });
