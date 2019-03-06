@@ -71,7 +71,7 @@ function displayGifs(){
 
                    $("#gifs").prepend(newDiv);
 
-
+                   gifImage.attr("src", results[i].images.fixed_height_still.url);
                 }
         
         });
