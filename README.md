@@ -4,7 +4,7 @@
 @ashleyricketts
 
 # Technology
-* html5, javascript, css, bootstrap
+* html5, javascript, css, bootstrap. giphy API
 
 # About
 * User can click animal button in order to generate 10 gifs of that animal
